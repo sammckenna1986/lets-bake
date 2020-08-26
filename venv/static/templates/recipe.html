@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="row">
+    <div class="col-md-5">
+        <img src="{{ recipes.image_source }}" alt="Profile image for {{recipes.recipe name}}" />
+        <h2 class="col-md-7">{{ recipes.recipe name }}</h2>
+    </div>
+</div>
+
+<div class="col-md-12">
+    <p>{{ recipes.category }}</p>
+    <p>{{ recipes.serves }}</p>
+    <p>{{ recipes.preparation time }}</p>
+    <p>{{ recipes. cooking time }}</p>
+    <p>{{ recipes.effort level }}</p>
+    <p>{{ recipes.ingredients }}</p>
+</div>
+<div class="col-md-12">
+    <p>{{ recipes.method }}</p>
+</div>
+
+{% endblock %}
