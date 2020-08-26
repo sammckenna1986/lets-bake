@@ -25,3 +25,12 @@ body {
     font-size: 7em;
 }
 
+.hero-quote {
+    color: white;
+    text-align: right;
+    font-family: 'Poppins', sans-serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 2em;
+}
+
