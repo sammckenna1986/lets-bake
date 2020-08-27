@@ -13,21 +13,26 @@ def home():
 
 @app.route('/Recipes')
 def recipes():
-    return render_template("recipe.html")
+    return render_template("recipes.html")
 
 
-##@app.route('/Add your recipe')
-##def upload():
- ##   return render_template("upload.html")
-
-##@app.route('/Search Results')
-##def search():
- ##   return render_template("search.html")
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template('page_not_found.html'), 404
 
 
-##@app.route('/Categories{% categorie_name %}')
-##def categories():
- ##   return render_template("categories.html")
+#@app.route('/Add your recipe')
+#def upload():
+#   return render_template("upload.html")
+
+#@app.route('/Search Results')
+#def search():
+#   return render_template("search.html")
+
+
+#app.route('/Categories{% categorie_name %}')
+# def categories():
+#   return render_template("categories.html")
 
 
 

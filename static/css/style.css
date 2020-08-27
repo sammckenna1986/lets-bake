@@ -34,3 +34,31 @@ body {
     font-size: 2em;
 }
 
+.404-title {
+    color: black;
+    text-align: left;
+    margin-left: 10%;
+    padding-top: 30%;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 7em;
+}
+
+.404-image {
+    background: url("../images/404image.jpg");
+    height: 500px;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.404-quote {
+    color: black;
+    text-align: right;
+    font-family: 'Poppins', sans-serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 2em;
+}
