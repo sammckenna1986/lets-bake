@@ -34,7 +34,7 @@ body {
     font-size: 2em;
 }
 
-.404-title {
+.pageNotFound-title {
     color: black;
     text-align: left;
     margin-left: 10%;
@@ -44,21 +44,19 @@ body {
     font-size: 7em;
 }
 
-.404-image {
-    background: url("../images/404image.jpg");
+.pageNotFound-image {
+    background: url("../images/pageNotFoundimage.jpg");
     height: 500px;
-    width: 100%;
+    width: 50%;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
     background-attachment: fixed;
 }
 
-.404-quote {
+.pageNotFound-quote {
     color: black;
-    text-align: right;
+    text-align: center;
     font-family: 'Poppins', sans-serif;
-    font-style: italic;
-    font-weight: 400;
-    font-size: 2em;
+    font-weight: 700;
+    font-size: 3em;
 }
