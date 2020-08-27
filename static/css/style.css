@@ -70,3 +70,13 @@ body {
     background-size: cover;
     background-attachment: fixed;
 }
+
+.recipes-title {
+    color: white;
+    text-align: left;
+    margin-left: 10%;
+    padding-top: 10%;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 7em;
+}
