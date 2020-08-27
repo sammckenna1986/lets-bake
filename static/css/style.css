@@ -60,3 +60,13 @@ body {
     font-weight: 700;
     font-size: 3em;
 }
+
+.recipes-image {
+    background: url("../images/recipes.jpg");
+    height: 300px;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
