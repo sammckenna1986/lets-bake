@@ -5,8 +5,8 @@ A recipe search engine for users to find, upload, edit and delete baking recipes
 ## UX
 This website is design for individuals looking for baking recipes and inspiration. Users will be able to search using keywords for recipes. Use a dropdown menu to browse categories of recipes, as well as upload, edit and delete their own recipes. This site will inspire users to get their mixing bowls out through a "Recipe of the Week" and "Recently Added"
 
-![Image of wireframe1](venv/static/images/LetsBakeWireframe1.jpg)
-![Image of wireframe2](venv/static/images/LetsBakeWireframe2.jpg)
+![Image of wireframe1](static/images/LetsBakeWireframe1.jpg)
+![Image of wireframe2](static/images/LetsBakeWireframe2.jpg)
 
 ## Features
 In this section, you should go over the different parts of your project, and describe each in a sentence or so.
