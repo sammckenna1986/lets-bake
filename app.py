@@ -1,9 +1,15 @@
 import os
 from flask import Flask, render_template
+from flask_pymongo import PyMongo, pymongo
+
 
 
 
 app = Flask(__name__)
+
+
+MONGO_URI = os.environ.get(“MONGO_URI”)
+mongo = PyMongo(app)
 
 
 @app.route('/')
