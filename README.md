@@ -47,7 +47,7 @@ In addition, you should mention in this section how your project looks and works
 You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
 
 Debugging, during first master push to heroku I kept receiving an error that the app was crashing. Through thorough checking and trying different fixes it was eventually solve through using gunicorn in the profile and update the requirements.txt. This resolved the issue through trying different fixes I also found an article to Config Vars for Deploy-Specific Settings for Heroku [Read that Article here](https://blog.heroku.com/config-vars). This enabled me to secure the secret key without having it displayed anywhere in my code. Pretty cool.
-
+Installing mongo engine, after some research I thought using a more advanced ODM would allow for more advanced operators to be used and to bring more structure to the project. However on installing I found it had a bug that then wouldn't allow my python file to run, so I uninstalled it. And have continued to use pymongo instead.
 If this section grows too long, you may want to split it off into a separate file and link to it from here.
 
 ## Deployment
