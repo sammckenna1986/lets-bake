@@ -91,3 +91,13 @@ body {
     background-size: cover;
     background-attachment: fixed;
 }
+
+.biscuits-image {
+    background: url("../images/biscuits.jpg");
+    height: 300px;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}

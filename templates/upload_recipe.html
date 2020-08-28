@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container-fluid biscuits-image">
+       <div class="container-fluid">
+        <h1 class="recipes-title">
+			Add your recipe here</h1>
+       </div>
+</div>
+<br>
+<form>
+  <div class="form-group">
+    <label for="formGroupExampleInput"></label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Name of Recipe">
+  </div>
+    <div>
+         <div class="row">
+             <h5>Preparation Time</h5>
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Enter Preparation time">
+            </div>
+             <h5>Cooking Time</h5>
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Enter Cooking Time">
+             </div>
+         </div>
+        <br>
+         <div class="row">
+             <h5>Serves</h5>
+            <div class="col-md-4">
+                <input type="text" class="form-control" placeholder="How many does your recipe serve?">
+            </div>
+             <h5>Effort Level </h5>
+             <div class="col-md-4">
+             <div class="form-group">
+        <select class="form-control" id="exampleFormControlSelect1">
+      <option>Easy</option>
+      <option>Moderate</option>
+      <option>Fair bit of effort needed</option>
+      </select>
+  </div>
+         </div>
+    </div>
+    </div>
+  <br>
+  <br>
+    <h3>Ingredients</h3>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Ingredient 1</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" placeholder="make sure to include the weight and/or quantity">
+    </div>
+        <br>
+        <label class="col-sm-2 col-form-label">Ingredient 2</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" placeholder="make sure to include the weight and/or quantity">
+    </div>
+        <br>
+        <label class="col-sm-2 col-form-label">Ingredient 3</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" placeholder="make sure to include the weight and/or quantity">
+    </div>
+        <br>
+        <label class="col-sm-2 col-form-label">Ingredient 4</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" placeholder="make sure to include the weight and/or quantity">
+    </div>
+        <br>
+        <label class="col-sm-2 col-form-label">Ingredient 5</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" placeholder="make sure to include the weight and/or quantity">
+    </div>
+        <br>
+        <label class="col-sm-2 col-form-label">Ingredient 6</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" placeholder="make sure to include the weight and/or quantity">
+    </div>
+        <br>
+        <label class="col-sm-2 col-form-label">Ingredient 7</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" placeholder="make sure to include the weight and/or quantity">
+    </div>
+        <br>
+        <label class="col-sm-2 col-form-label">Ingredient 8</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" placeholder="make sure to include the weight and/or quantity">
+    </div>
+        <br>
+        <label class="col-sm-2 col-form-label">Ingredient 9</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" placeholder="make sure to include the weight and/or quantity">
+    </div>
+        <br>
+        <label class="col-sm-2 col-form-label">Ingredient 10</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" placeholder="make sure to include the weight and/or quantity">
+    </div>
+
+  </div>
+    <h4>Method</h4>
+    <div class="form-group">
+    <label for="exampleFormControlTextarea1"></label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder=""Write your method here, include oven temperatures and all steps needed to bake your amazing recipe></textarea>
+  </div>
+</form>
+
+{% endblock %}

@@ -29,12 +29,12 @@ def page_not_found(error):
     return render_template('page_not_found.html'), 404
 
 
-#@app.route('/Add your recipe')
-#def upload():
-#   return render_template("upload.html")
+@app.route('/Add your recipe')
+def upload_recipe():
+   return render_template("upload_recipe.html")
 
 @app.route('/Search_Results')
-def search():
+def recipe_search_display():
    return render_template("recipe_search_display.html")
 
 
