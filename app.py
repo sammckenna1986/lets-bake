@@ -1,26 +1,17 @@
 import os
 from flask import Flask, render_template
 from flask_pymongo import PyMongo, pymongo
-import data.mongo_setup as mongo_setup
-#import mongoengine
-
-#def main():
-#    mongo_setup.global_init()
 
 app = Flask(__name__)
 app.config["MONGO_URI"] = "mongodb://localhost:27017/myDatabase"
 mongo = PyMongo(app)
 client = pymongo.MongoClient("mongodb://localhost:27017/")
-mydb = client["Recipe_Book"]
-mycol = mydb["Recipes"]
+db = client["Recipe_Book"]
+collection = db["Recipes"]
 
-#recipes = ["Recipes"]
 
-#alias_core = 'core'
-#db = 'Recipe_Book'
-
-#ongoengine.register_connection(alias=alias_core, name=db)
-
+for x in mycol.find():
+  print(x)
 
 @app.route('/')
 def index():
@@ -50,6 +41,8 @@ def page_not_found(error):
 # def categories():
 #   return render_template("categories.html")
 
+def recipe_display:
+    db.Recipe_Book.find({}, {"name": 1});
 
 
 if __name__ == '__main__':
