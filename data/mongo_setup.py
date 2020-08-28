@@ -1,5 +1,5 @@
-import mongoengine
+#from Mongoengine import mongoengine
 
 
-def global_init():
-    mongoengine.register_connection(alias='core',name='Recipe_Book')
+#def global_init():
+  #  mongoengine.register_connection(alias='core',name='Recipe_Book')
