@@ -82,7 +82,7 @@ body {
     font-display: flex;
 }
 
-.recipe-display-image {
+.cupcake-image {
     background: url("../images/cupcake.jpg");
     height: 300px;
     width: 100%;

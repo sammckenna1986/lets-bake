@@ -35,7 +35,7 @@ def page_not_found(error):
 
 @app.route('/Search_Results')
 def search():
-   return render_template("recipe_display.html")
+   return render_template("recipe_search_display.html")
 
 
 #app.route('/Categories{% categorie_name %}')
