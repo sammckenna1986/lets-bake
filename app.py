@@ -1,26 +1,27 @@
-import os
 from flask import Flask, render_template
-from flask_pymongo import PyMongo, pymongo
+from flask_pymongo import PyMongo
+from pymongo import MongoClient
 
 app = Flask(__name__)
 app.config["MONGO_URI"] = "mongodb://localhost:27017/myDatabase"
 mongo = PyMongo(app)
-client = pymongo.MongoClient("mongodb://localhost:27017/")
-db = client["Recipe_Book"]
+cluster = MongoClient("mongodb://claireroberts1403:m0ng0DB2020@letsbake-shard-00-00.mizcn.mongodb.net:27017,letsbake-shard-00-01.mizcn.mongodb.net:27017,letsbake-shard-00-02.mizcn.mongodb.net:27017/<dbname>?ssl=true&replicaSet=atlas-e54zvz-shard-0&authSource=admin&retryWrites=true&w=majority")
+db = cluster["Recipe_Book"]
 collection = db["Recipes"]
 
 
-for x in mycol.find():
-  print(x)
+results = collection.find({"name":"brownie"})
+print(results)
+
 
 @app.route('/')
 def index():
     return render_template("index.html")
 
 
-@app.route('/Recipes')
-def recipes():
-    return render_template("recipes.html")
+@app.route('/Recipes_Page')
+def recipes_page():
+    return render_template("recipes_page.html")
 
 
 @app.errorhandler(404)
@@ -41,8 +42,8 @@ def page_not_found(error):
 # def categories():
 #   return render_template("categories.html")
 
-def recipe_display:
-    db.Recipe_Book.find({}, {"name": 1});
+#def recipe_display:
+#    db.Recipe_Book.find({}, {"name": 1});
 
 
 if __name__ == '__main__':
@@ -53,10 +54,3 @@ if __name__ == '__main__':
 #
 #    recipe = Recipe(name=name, prep_time=prep_time, cooking_time=cooking_time, effort_level=effort_level, serves=serves, ingredients=ingredients, method=method)
 #   recipe.save()
-
-
-#def search_recipes() -> List[Recipes]:
-#    recipe_search_results = Recipes()
-#    .keyword
-#
-#    return list(recipe_search_results)
