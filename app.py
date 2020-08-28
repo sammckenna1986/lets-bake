@@ -6,6 +6,9 @@ from flask_pymongo import PyMongo, pymongo
 app = Flask(__name__)
 app.config["MONGO_URI"] = "mongodb://localhost:27017/myDatabase"
 mongo = PyMongo(app)
+client = pymongo.MongoClient("mongodb://localhost:27017/")
+mydb = client["Recipe_Book"]
+mycol = mydb["Recipes"]
 
 
 @app.route('/')

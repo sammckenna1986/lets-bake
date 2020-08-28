@@ -45,7 +45,9 @@ Try to submit the form with all inputs valid and verify that a success message a
 In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
 
 You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
+
 Debugging, during first master push to heroku I kept receiving an error that the app was crashing. Through thorough checking and trying different fixes it was eventually solve through using gunicorn in the profile and update the requirements.txt. This resolved the issue through trying different fixes I also found an article to Config Vars for Deploy-Specific Settings for Heroku [Read that Article here](https://blog.heroku.com/config-vars). This enabled me to secure the secret key without having it displayed anywhere in my code. Pretty cool.
+
 If this section grows too long, you may want to split it off into a separate file and link to it from here.
 
 ## Deployment
