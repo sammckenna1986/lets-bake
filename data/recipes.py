@@ -8,7 +8,7 @@ class Recipes(mongoengine.Document):
     effort_level = mongoengine.StringField(required=True)
     serves = mongoengine.StringField(required=True)
     ingredients = mongoengine.StringField(required=True)
-    method = mongoengine.StringField(required=True,max_length=1000)
+    method = mongoengine.StringField(required=True, max_length=1000)
     keywords = mongoengine.StringField()
     uploaded_date = mongoengine.DateTimeField(default=datetime.datetime.now)
 
