@@ -33,9 +33,9 @@ def page_not_found(error):
 #def upload():
 #   return render_template("upload.html")
 
-#@app.route('/Search Results')
-#def search():
-#   return render_template("search.html")
+@app.route('/Search_Results')
+def search():
+   return render_template("recipe_display.html")
 
 
 #app.route('/Categories{% categorie_name %}')

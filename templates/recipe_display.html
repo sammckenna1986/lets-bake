@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container-fluid recipe-display-image">
+       <div class="container-fluid">
+        <h1 class="recipes-title">
+			Recipes</h1>
+       </div>
+</div>
+<div class="card mb-3" style="max-width: 100%;">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src= "static/images/hero.jpg" class="card-img" alt="Image Not Available">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Recipe_Name</h5>
+        <p class="card-text">Preparation Time: Prep_time</p>
+          <p class="card-text">Cooking Time: Cooking_time</p>
+          <p class="card-text">Serves: Serves</p>
+          <p class="card-text">Effort: Effort_level</p>
+        <p class="card-text"><small class="text-muted">Added to site:</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Ingredients</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Method</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<h2>Other recipes you may like ...</h2>
+<br>
+<div class="card-deck">
+  <div class="card">
+    <img src="static/images/hero.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">recipe_name</h5>
+    </div>
+  </div>
+  <div class="card">
+    <img src="static/images/hero.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">recipe_name</h5>
+    </div>
+  </div>
+  <div class="card">
+    <img src="static/images/hero.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">recipe_Name</h5>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

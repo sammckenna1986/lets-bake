@@ -22,7 +22,7 @@ body {
     padding-top: 30%;
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
-    font-size: 7em;
+    font-size: 700%;
 }
 
 .hero-quote {
@@ -78,5 +78,16 @@ body {
     padding-top: 10%;
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
-    font-size: 7em;
+    font-size: 600%;
+    font-display: flex;
+}
+
+.recipe-display-image {
+    background: url("../images/cupcake.jpg");
+    height: 300px;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
