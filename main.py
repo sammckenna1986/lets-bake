@@ -43,7 +43,7 @@ def upload_recipe():
 
 @app.route('/Search_Results')
 def recipe_display():
-    return render_template("recipes_search_display.html", recipes=mongo.db.recipes.find())
+    return render_template("recipe_search_display.html", recipes=mongo.db.recipes.find())
 
 
 
