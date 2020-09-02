@@ -12,22 +12,27 @@ def index():
 
 @app.route('/Recipes_Page')
 def recipes_page():
-    return render_template("recipes_page.html", recipes)
+    return render_template("recipes_page.html")
 
 
 @app.errorhandler(404)
 def page_not_found(error):
-    return render_template('page_not_found.html'), 404
+    return render_template("page_not_found.html"), 404
 
 
-@app.route('/Add your recipe')
+@app.route('/Add your recipe', methods=["POST", "GET"])
 def upload_recipe():
-   return render_template("upload_recipe.html")
+    return render_template("upload_recipe.html", category_name=mongo.db.category_name.find())
 
 
-#app.route('/Categories{% categorie_name %}')
-# def categories():
-#   return render_template("categories.html")
+@app.route('/<my_recipe>')
+def my_recipe():
+    return render_template("my_recipe.html")
+
+
+@app.route('/{% category % }')
+def category():
+    return render_template("categories.html", category_name=mongo.db.category_name.find())
 
 
 @app.route('/Search_Results')
@@ -43,8 +48,7 @@ def cake_recipe_display():
 if __name__ == '__main__':
     app.run(debug=True)
 
-
-#def add_recipe(name, prep_time, cooking_time, effort_level, serves, ingredients, method):
+# def add_recipe(name, prep_time, cooking_time, effort_level, serves, ingredients, method):
 #
 #    recipe = Recipe(name=name, prep_time=prep_time, cooking_time=cooking_time, effort_level=effort_level, serves=serves, ingredients=ingredients, method=method)
 #   recipe.save()

@@ -13,6 +13,16 @@
         <input name="name" class="form-control" id="formGroupExampleInput" placeholder="Enter the name for the recipe" type="text">
     </div>
     <div>
+        <label class="col-form-label">Choose Category</label>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <select name="category" class="form-control" id="exampleFormControlSelect1">
+                        {% for cat in category_name %}
+                        <option value=""{{cat.category_name}}>{{cat.category_name}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
         <div class="row">
             <label class="col-form-label">Preparation Time</label>
             <div class="col">
