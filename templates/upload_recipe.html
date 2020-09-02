@@ -7,33 +7,33 @@
     </div>
 </div>
 <br>
-<form>
+<form name="my_recipe" action="#" method="POST">
     <div class="form-group">
         <label for="formGroupExampleInput">Name of Recipe</label>
-        <input class="form-control" id="formGroupExampleInput" placeholder="Enter the name for the recipe" type="text">
+        <input name="name" class="form-control" id="formGroupExampleInput" placeholder="Enter the name for the recipe" type="text">
     </div>
     <div>
         <div class="row">
             <label class="col-form-label">Preparation Time</label>
             <div class="col">
-                <input type="text" class="form-control" placeholder="In minutes">
+                <input name="prep_time" type="text" class="form-control" placeholder="In minutes">
             </div>
             <label class="col-form-label">Cooking Time</label>
             <div class="col">
-                <input type="text" class="form-control" placeholder="In minutes">
+                <input name="cooking_time" type="text" class="form-control" placeholder="In minutes">
             </div>
         </div>
         <br>
         <div class="row">
             <label class="col-sm-2 col-form-label">Serves</label>
             <div class="col-md-4">
-                <input type="text" class="form-control" placeholder="How many does your recipe serve?">
+                <input name="serves" type="text" class="form-control" placeholder="How many does your recipe serve?">
             </div>
             <br>
             <label class="col-form-label">Effort Level</label>
             <div class="col-md-4">
                 <div class="form-group">
-                    <select class="form-control" id="exampleFormControlSelect1">
+                    <select name="effort_level" class="form-control" id="exampleFormControlSelect1">
                         <option>Easy</option>
                         <option>Moderate</option>
                         <option>Fair bit of effort needed</option>
@@ -48,62 +48,62 @@
     <div class="form-group">
         <label class="col-sm-2 col-form-label">Ingredient</label>
         <div class="col-sm-10">
-            <input type="text" class="form-control" placeholder="Include weight and/or quantity">
+            <input name="ingredients" type="text" class="form-control" placeholder="Include weight and/or quantity">
         </div>
         <br>
         <label class="col-sm-2 col-form-label">Ingredient</label>
         <div class="col-sm-10">
-            <input type="text" class="form-control" placeholder="Include weight and/or quantity">
+            <input name="ingredients" type="text" class="form-control" placeholder="Include weight and/or quantity">
         </div>
         <br>
         <label class="col-sm-2 col-form-label">Ingredient</label>
         <div class="col-sm-10">
-            <input type="text" class="form-control" placeholder="Include weight and/or quantity">
+            <input name="ingredients" type="text" class="form-control" placeholder="Include weight and/or quantity">
         </div>
         <br>
         <label class="col-sm-2 col-form-label">Ingredient</label>
         <div class="col-sm-10">
-            <input type="text" class="form-control" placeholder="Include weight and/or quantity">
+            <input name="ingredients" type="text" class="form-control" placeholder="Include weight and/or quantity">
         </div>
         <br>
         <label class="col-sm-2 col-form-label">Ingredient</label>
         <div class="col-sm-10">
-            <input type="text" class="form-control" placeholder="Include weight and/or quantity">
+            <input name="ingredients" type="text" class="form-control" placeholder="Include weight and/or quantity">
         </div>
         <br>
         <label class="col-sm-2 col-form-label">Ingredient</label>
         <div class="col-sm-10">
-            <input type="text" class="form-control" placeholder="Include weight and/or quantity">
+            <input name="ingredients" type="text" class="form-control" placeholder="Include weight and/or quantity">
         </div>
         <br>
         <label class="col-sm-2 col-form-label">Ingredient</label>
         <div class="col-sm-10">
-            <input type="text" class="form-control" placeholder="Include weight and/or quantity">
+            <input name="ingredients" type="text" class="form-control" placeholder="Include weight and/or quantity">
         </div>
         <br>
         <label class="col-sm-2 col-form-label">Ingredient</label>
         <div class="col-sm-10">
-            <input type="text" class="form-control" placeholder="Include weight and/or quantity">
+            <input name="ingredients" type="text" class="form-control" placeholder="Include weight and/or quantity">
         </div>
         <br>
         <label class="col-sm-2 col-form-label">Ingredient</label>
         <div class="col-sm-10">
-            <input type="text" class="form-control" placeholder="Include weight and/or quantity">
+            <input name="ingredients" type="text" class="form-control" placeholder="Include weight and/or quantity">
         </div>
         <br>
         <label class="col-sm-2 col-form-label">Ingredient</label>
         <div class="col-sm-10">
-            <input type="text" class="form-control" placeholder="Include weight and/or quantity">
+            <input name="ingredients" type="text" class="form-control" placeholder="Include weight and/or quantity">
         </div>
 
     </div>
     <h4>Method</h4>
     <div class="form-group">
         <label for="exampleFormControlTextarea1"></label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+        <textarea name="method" class="form-control" id="exampleFormControlTextarea1" rows="3"
                   placeholder="Write your method here, include oven temperatures and all steps needed to bake your amazing recipe"></textarea>
     </div>
-    <button type="submit" class="btn btn-info">Submit</button>
+    <button class="btn btn-info" type="submit" value="submit">Submit</button>
 </form>
 
 {% endblock %}
