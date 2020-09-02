@@ -1,19 +1,8 @@
 from flask import Flask, render_template, redirect, request, url_for
-from flask_pymongo import PyMongo
-from pymongo import MongoClient
+import mongo
 
 
 app = Flask(__name__)
-app.config["MONGO_URI"] = "mongodb://localhost:27017/myDatabase"
-mongo = PyMongo(app)
-cluster = MongoClient("mongodb://claireroberts1403:m0ng0DB2020@letsbake-shard-00-00.mizcn.mongodb.net:27017,letsbake-shard-00-01.mizcn.mongodb.net:27017,letsbake-shard-00-02.mizcn.mongodb.net:27017/<dbname>?ssl=true&replicaSet=atlas-e54zvz-shard-0&authSource=admin&retryWrites=true&w=majority")
-db = cluster["Recipe_Book"]
-collection = db["Recipes"]
-
-
-
-results = collection.find({"name":"brownie"})
-print(results)
 
 
 @app.route('/')
@@ -23,7 +12,7 @@ def index():
 
 @app.route('/Recipes_Page')
 def recipes_page():
-    return render_template("recipes_page.html")
+    return render_template("recipes_page.html", recipes)
 
 
 @app.errorhandler(404)
@@ -45,6 +34,10 @@ def upload_recipe():
 def recipe_display():
     return render_template("recipe_search_display.html", recipes=mongo.db.recipes.find())
 
+
+@app.route('/Keyword{% cake %}')
+def cake_recipe_display():
+    return render_template("recipe_search_display.html", recipes=mongo.db.recipes.find("cake"))
 
 
 if __name__ == '__main__':

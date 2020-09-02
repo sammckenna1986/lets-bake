@@ -1,9 +1,9 @@
 import pymongo
-import os
 
-MONGODB_URI = os.getenv("mongodb://localhost:27017/myDatabase")
-DBS_NAME = "Recipe_Book"
-COLLECTION_NAME = "Recipes"
+
+cluster = pymongo.MongoClient("mongodb+srv://claireroberts1403:M0ng0DB2020@letsbake.mizcn.mongodb.net/Recipe_Book?retryWrites=true&w=majority")
+db = cluster["Recipe_Book"]
+collection = db["Recipes"]
 
 
 def mongo_connect(url):
@@ -15,11 +15,7 @@ def mongo_connect(url):
         print("Could not connect to MongoDB: %s") % e
 
 
-conn = mongo_connect(MONGODB_URI)
 
-coll = conn[DBS_NAME][COLLECTION_NAME]
+post = {"name": "Brilliant Birthday Cake"}
 
-documents = coll.find()
-
-for doc in documents:
-    print(doc)
+collection.insert_one(post)
