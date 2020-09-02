@@ -21,8 +21,14 @@ def page_not_found(error):
 
 
 @app.route('/Add your recipe', methods=["POST", "GET"])
-def upload_recipe():
-    return render_template("upload_recipe.html", category_name=mongo.db.category_name.find())
+def add_recipe():
+    return render_template("add_recipe.html")
+
+
+#@app.route('/submit_recipe', methods=["POST", "GET"])
+#def upload_recipe(recipes=None):
+ #   recipes = mongo.db.recipes, recipes.insert_one(request.form.to_dict())
+ #   return redirect(url_for('my_recipe.html'))
 
 
 @app.route('/<my_recipe>')
