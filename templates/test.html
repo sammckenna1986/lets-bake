@@ -1,15 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<!-- page for testing rendering data into html-->
+{% extends 'base.html' %}
+{% block content %}
 {% for recipe in recipes %}
-{{ recipes.name|e }}
+<!-- page for testing rendering data into html-->
+
+<p>({"category_name": 'biscuits'})</p>
+
+
 {% endfor %}
-
-
-</body>
-</html>
+{% endblock %}

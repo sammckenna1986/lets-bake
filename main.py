@@ -1,6 +1,6 @@
 from flask import Flask, render_template, redirect, request, url_for
 import mongo
-from mongo import db
+
 
 app = Flask(__name__)
 
@@ -65,3 +65,13 @@ if __name__ == '__main__':
 #
 #    recipe = Recipe(name=name, prep_time=prep_time, cooking_time=cooking_time, effort_level=effort_level, serves=serves, ingredients=ingredients, method=method)
 #   recipe.save()
+
+
+@app.route('/test')
+def test():
+    all_recipes = mongo.db.recipes.find({"__id"})
+    return render_template('test.html', recipes=all_recipes)
+
+
+print(name.count())
+
