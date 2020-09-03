@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-{% for Recipe in Recipes %}
+
 <!-- index is the home page with the hero image and displaying a recipe of the week and a most recently added feature-->
      <div class="container-fluid hero-image">
        <div class="container-fluid">
@@ -30,9 +30,12 @@
           <p class="card-text">Effort: Effort_level</p>
         <p class="card-text"><small class="text-muted">Added to site:</small></p>
       </div>
+        {% endfor %}
     </div>
   </div>
 </div>
     </div>
-{% endfor %}
+
+
+
 {% endblock %}
