@@ -14,7 +14,7 @@ def index():
 def recipes_page():
     try:
         recipe = db.recipes.findone({})
-        return render_template("recipes_page.html", recipes=recipes)
+        return render_template("recipes_page.html", recipes=recipe)
     except Exception as e:
         return render_template("page_not_found.html"), 404
 
@@ -50,9 +50,14 @@ def recipe_display():
     return render_template("recipe_search_display.html", recipes=mongo.db.recipes.find())
 
 
-@app.route('/Keyword{% cake %}')
-def cake_recipe_display():
-    return render_template("recipe_search_display.html", recipes=mongo.db.recipes.find("cake"))
+@app.route('/Cake')
+def cake():
+    return render_template("cake.html", recipes=mongo.db.recipes.find("cake"))
+
+
+@app.route('/Biscuits')
+def biscuits():
+    return render_template("biscuits.html", recipes=mongo.db.recipes.find("biscuits"))
 
 
 if __name__ == '__main__':
@@ -62,6 +67,3 @@ if __name__ == '__main__':
 #
 #    recipe = Recipe(name=name, prep_time=prep_time, cooking_time=cooking_time, effort_level=effort_level, serves=serves, ingredients=ingredients, method=method)
 #   recipe.save()
-
-for recipe in recipes.find({"category": "Cake"}):
-    pprint.pprint(recipe)

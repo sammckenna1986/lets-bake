@@ -30,8 +30,9 @@
          Browse Recipe Categories
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Cakes</a>
-          <a class="dropdown-item" href="#">Biscuits</a>
+          <a class="dropdown-item" href="{{ url_for('Cakes') }}">Cakes</a>
+          <a class="dropdown-item" href="{{ url_for('Biscuits') }}">Biscuits</a>
+            <!-- search keyword result left blank to render all recipes and send user to recipe_search_results-->
           <a class="dropdown-item" href="#">All Recipes</a>
           <a class="dropdown-item disabled" href="#">More Coming Soon!</a>
         </div>
@@ -41,6 +42,7 @@
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
+        <!-- search feature to seek out keywords in database and render results and send user to recipe_search_display page-->
       <input class="form-control mr-sm-2" type="search" placeholder="Search for cake..." aria-label="Search">
       <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
     </form>
