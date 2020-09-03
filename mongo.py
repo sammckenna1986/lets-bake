@@ -11,7 +11,7 @@ db = cluster["Recipe_Book"]
 collection = db["Recipes"]
 
 
-results = collection.find({})
+results = collection.find({"category_name": cake})
 # https://api.mongodb.com/python/current/tutorial.html
 # The web framework gets post_id from the URL and passes it as a string
 def get(post_id):
@@ -22,7 +22,3 @@ def get(post_id):
 for x in results:
     print(x)
 
-cakes = collection.find({"category_name": "cake"})
-
-for cake in cakes:
-    print(cake)
