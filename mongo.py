@@ -1,7 +1,7 @@
 import pymongo
 from pymongo import MongoClient
 from bson.objectid import ObjectId
-import pprint
+
 
 client = MongoClient('localhost', 27017)
 
@@ -11,7 +11,7 @@ db = cluster["Recipe_Book"]
 collection = db["Recipes"]
 
 
-results = collection.find({"category_name": cake})
+results = collection.find({"category_name": 'biscuits'})
 # https://api.mongodb.com/python/current/tutorial.html
 # The web framework gets post_id from the URL and passes it as a string
 def get(post_id):
