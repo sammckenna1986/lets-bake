@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-
+{% for recipesList in recipesList %}
 <div class="container-fluid cupcake-image">
 </div>
 <div class="card mb-3" style="max-width: 100%;">
@@ -10,7 +10,7 @@
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <h5 class="card-title">Recipe_Name</h5>
+        <h5 class="card-title">{{name["Recipe_Name"}}</h5>
         <p class="card-text">Preparation Time: Prep_time</p>
           <p class="card-text">Cooking Time: Cooking_time</p>
           <p class="card-text">Serves: Serves</p>
@@ -40,6 +40,7 @@
 </div>
 <br>
 <br>
+{% endblock %}
 <!-- Found with same keywords -->
 <h2>Other recipes you may like ...</h2>
 <br>

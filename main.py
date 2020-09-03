@@ -1,6 +1,6 @@
 from flask import Flask, render_template, redirect, request, url_for
 import mongo
-
+from mongo import db
 
 app = Flask(__name__)
 
@@ -10,9 +10,13 @@ def index():
     return render_template("index.html")
 
 
-@app.route('/Recipes_Page')
+@app.route('/Recipes_Page', methods=['GET'])
 def recipes_page():
-    return render_template("recipes_page.html")
+    try:
+        recipesList = db.recipes.find({})
+        return render_template("recipes_page.html", recipesList=recipesList)
+    except Exception as e:
+        return render_template("page_not_found.html"), 404
 
 
 @app.errorhandler(404)
@@ -25,20 +29,21 @@ def add_recipe():
     return render_template("add_recipe.html")
 
 
-#@app.route('/submit_recipe', methods=["POST", "GET"])
-#def upload_recipe(recipes=None):
- #   recipes = mongo.db.recipes, recipes.insert_one(request.form.to_dict())
- #   return redirect(url_for('my_recipe.html'))
+
+@app.route('/submit_recipe', methods=["POST", "GET"])
+def upload_recipe(recipes=None):
+    collection = mongo.db.recipes, recipes.insert_one(request.form.to_dict())
+    return redirect(url_for('my_recipe.html'))
 
 
-@app.route('/<my_recipe>')
-def my_recipe():
-    return render_template("my_recipe.html")
+#@app.route('/<my_recipe>')
+#def my_recipe():
+ #   return render_template("my_recipe.html")
 
 
-@app.route('/{% category % }')
-def category():
-    return render_template("categories.html", category_name=mongo.db.category_name.find())
+#@app.route('/{% category % }')
+#def category():
+#    return render_template("categories.html", category_name=mongo.db.category_name.find())
 
 
 @app.route('/Search_Results')
