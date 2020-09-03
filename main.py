@@ -10,13 +10,9 @@ def index():
     return render_template("index.html")
 
 
-@app.route('/recipes_page', methods=['GET'])
+@app.route('/recipes_page')
 def recipes_page():
-    try:
-        recipe = db.recipes.findone({})
-        return render_template("recipes_page.html", recipes=recipe)
-    except Exception as e:
-        return render_template("page_not_found.html"), 404
+    return render_template("recipes_page.html", recipes=mongo.db.recipes.find())
 
 
 @app.errorhandler(404)

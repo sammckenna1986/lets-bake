@@ -22,8 +22,7 @@ def get(post_id):
 for x in results:
     print(x)
 
+cakes = collection.find({"category_name": "cake"})
 
-for recipe in collection.find({"category": "Cake"}):
-    pprint.pprint(recipe)
-
-
+for cake in cakes:
+    print(cake)
