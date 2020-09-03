@@ -11,14 +11,14 @@ db = cluster["Recipe_Book"]
 collection = db["Recipes"]
 
 
-results = collection.find({"category_name": 'biscuits'})
+#results = collection.find({"category_name": 'biscuits'})
 # https://api.mongodb.com/python/current/tutorial.html
 # The web framework gets post_id from the URL and passes it as a string
-def get(post_id):
+#def get(post_id):
     # Convert from string to ObjectId:
-    document = client.db.collection.find_one({'_id': ObjectId(post_id)})
+#    document = client.db.collection.find_one({'_id': ObjectId(post_id)})
 
 
-for x in results:
-    print(x)
+#for x in results:
+#    print(x)
 

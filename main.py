@@ -16,11 +16,16 @@ def recipes_page():
 
 
 @app.route('/Cake')
-def cake(category_name):
-    display_cake =  mongo.db.recipes.find_one({"_id": ObjectId(task_id)})
-    all_cakes =  mongo.db.recipes.find()
-    return render_template('recipes_page.html', category_name=display_cake,
-                           recipes=all_cakes)
+def cake():
+    all_cakes = mongo.db.recipes.find({"category_name": 'cake'})
+    return render_template('cake.html', recipes=all_cakes)
+
+
+@app.route('/Biscuits')
+def biscuits():
+    all_biscuits = mongo.db.recipes.find({"category_name": 'biscuits'})
+    return render_template('biscuits.html', recipes=all_biscuits)
+
 
 @app.errorhandler(404)
 def page_not_found(error):
@@ -51,16 +56,6 @@ def upload_recipe(recipes=None):
 @app.route('/Search_Results')
 def recipe_display():
     return render_template("recipe_search_display.html", recipes=mongo.db.recipes.find())
-
-
-#@app.route('/Cake')
-#def cake():
-#    return render_template("cake.html", recipes=mongo.db.recipes.find("cake"))
-
-
-##@app.route('/Biscuits')
-#def biscuits():
-#    return render_template("biscuits.html", recipes=mongo.db.recipes.find("biscuits"))
 
 
 if __name__ == '__main__':

@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+{% for recipe in recipes %}
 <!-- page to display all results in the category cake-->
 <div class="container-fluid cupcake-image">
        <div class="container-fluid">
@@ -26,10 +27,5 @@
   </div>
 </div>
 <br>
-{% for recipe in recipes %}
-{{recipe.name}}
 {% endfor %}
-
-
-
 {% endblock %}
