@@ -1,8 +1,14 @@
-from flask import Flask, render_template, redirect, request, url_for
-import mongo
-
+import os
+from flask import Flask, render_template, redirect, request, url_for, request
+from flask_pymongo import PyMongo
+from bson.objectid import ObjectId
 
 app = Flask(__name__)
+app.config["Recipe_Book"] = 'Recipes'
+app.config["MONGO_URI"] = "mongodb+srv://claireroberts1403:M0ng0DB2020@letsbake.mizcn.mongodb.net/Recipe_Book?retryWrites=true&w=majority"
+
+
+mongo = PyMongo(app)
 
 
 @app.route('/')
@@ -12,19 +18,20 @@ def index():
 
 @app.route('/recipes_page')
 def recipes_page():
-    return render_template("recipes_page.html", recipes=mongo.db.recipes.find())
+    return render_template("recipes_page.html", Recipes=mongo.db.Recipes.find())
 
 
 @app.route('/Cake')
 def cake():
-    all_cakes = mongo.db.recipes.find({"category_name": 'cake'})
-    return render_template('cake.html', recipes=all_cakes)
+    all_cakes = mongo.db.Recipes.find({"category_name": 'cake'})
+    print(all_cakes.count())
+    return render_template('cake.html', Recipes=all_cakes)
 
 
 @app.route('/Biscuits')
 def biscuits():
-    all_biscuits = mongo.db.recipes.find({"category_name": 'biscuits'})
-    return render_template('biscuits.html', recipes=all_biscuits)
+    all_biscuits = mongo.db.Recipes.find({"category_name": 'biscuits'})
+    return render_template('biscuits.html', Recipes=all_biscuits)
 
 
 @app.errorhandler(404)
@@ -38,8 +45,8 @@ def add_recipe():
 
 
 @app.route('/submit_recipe', methods=["POST", "GET"])
-def upload_recipe(recipes=None):
-    collection = mongo.db.recipes, recipes.insert_one(request.form.to_dict())
+def upload_recipe(Recipes=None):
+    collection = mongo.db.Recipes, Recipes.insert_one(request.form.to_dict())
     return redirect(url_for('my_recipe.html'))
 
 
@@ -55,7 +62,7 @@ def upload_recipe(recipes=None):
 
 @app.route('/Search_Results')
 def recipe_display():
-    return render_template("recipe_search_display.html", recipes=mongo.db.recipes.find())
+    return render_template("recipe_search_display.html", Recipes=mongo.db.Recipes.find())
 
 
 if __name__ == '__main__':
@@ -69,9 +76,8 @@ if __name__ == '__main__':
 
 @app.route('/test')
 def test():
-    all_recipes = mongo.db.recipes.find({"__id"})
-    return render_template('test.html', recipes=all_recipes)
+    all_recipes = mongo.db.Recipes.find({"__id"})
+    return render_template('test.html', Recipes=all_recipes)
 
 
-print(name.count())
 

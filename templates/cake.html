@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-{% for recipe in recipes %}
+{% for Recipe in Recipes %}
 <!-- page to display all results in the category cake-->
 <div class="container-fluid cupcake-image">
        <div class="container-fluid">
@@ -16,12 +16,12 @@
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <h5 class="card-title">{{recipes.name}}</h5>
-        <p class="card-text">Preparation Time:{{recipes.Prep_time}}</p>
-          <p class="card-text">Cooking Time:{{recipes.Cooking_time}}</p>
-          <p class="card-text">Serves:{{recipes.Serves}}</p>
-          <p class="card-text">Effort Level:{{recipes.Effort_level}}</p>
-        <p class="card-text"><small class="text-muted">Added to site:{{recipes.date_added}}</small></p>
+        <h5 class="card-title">{{Recipe.name}}</h5>
+        <p class="card-text">Preparation Time:{{Recipe.Prep_time}}</p>
+          <p class="card-text">Cooking Time:{{Recipe.Cooking_time}}</p>
+          <p class="card-text">Serves:{{Recipe.Serves}}</p>
+          <p class="card-text">Effort Level:{{Recipe.Effort_level}}</p>
+        <p class="card-text"><small class="text-muted">Added to site:{{Recipe.date_added}}</small></p>
       </div>
     </div>
   </div>

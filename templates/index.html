@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+{% for Recipe in Recipes %}
 <!-- index is the home page with the hero image and displaying a recipe of the week and a most recently added feature-->
      <div class="container-fluid hero-image">
        <div class="container-fluid">
@@ -14,7 +15,7 @@
         <!-- Recipe that automatically changes each week -->
         <h1>Recipe of the week</h1>
         <br>
-        {% for recipes in recipes %}
+        {% for Recipes in Recipes %}
         <div class="card mb-3" style="max-width: 100%;">
   <div class="row no-gutters">
     <div class="col-md-4">
@@ -22,7 +23,7 @@
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <h5 class="card-title">{{ recipes.name }}</h5>
+        <h5 class="card-title">{{ Recipes.name }}</h5>
         <p class="card-text">Preparation Time: Prep_time</p>
           <p class="card-text">Cooking Time: Cooking_time</p>
           <p class="card-text">Serves: Serves</p>

@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+{% for Recipe in Recipes %}
 <!-- page to display search results from keyword search-->
 <div class="container-fluid recipes-image">
        <div class="container-fluid">
@@ -16,19 +17,19 @@
     </div>
     <div class="col-md-8">
       <div class="card-body">
-   <h5 class="card-title">{{recipes.name}}</h5>
-        <p class="card-text">Preparation Time:{{recipes.Prep_time}}</p>
-          <p class="card-text">Cooking Time:{{recipes.Cooking_time}}</p>
-          <p class="card-text">Serves:{{recipes.Serves}}</p>
-          <p class="card-text">Effort Level:{{recipes.Effort_level}}</p>
-        <p class="card-text"><small class="text-muted">Added to site:{{recipes.date_added}}</small></p>
+   <h5 class="card-title">{{Recipes.name}}</h5>
+        <p class="card-text">Preparation Time:{{Recipes.Prep_time}}</p>
+          <p class="card-text">Cooking Time:{{Recipes.Cooking_time}}</p>
+          <p class="card-text">Serves:{{Recipes.Serves}}</p>
+          <p class="card-text">Effort Level:{{Recipes.Effort_level}}</p>
+        <p class="card-text"><small class="text-muted">Added to site:{{Recipes.date_added}}</small></p>
       </div>
     </div>
   </div>
 </div>
 <br>
-{% for recipe in recipes %}
-{{recipe.name}}
+
+
 {% endfor %}
 
 
