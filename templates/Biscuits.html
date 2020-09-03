@@ -1,22 +1,21 @@
 {% extends 'base.html' %}
 {% block content %}
-<!-- page to display search results from keyword search-->
-<div class="container-fluid recipes-image">
+<!-- page to display all results in the category cake-->
+<div class="container-fluid biscuits-image">
        <div class="container-fluid">
         <h1 class="recipes-title">
-			Recipes</h1>
+			Biscuit Recipes</h1>
        </div>
 </div>
 <br>
-    <h2>Search Results</h2>
-    <div class="card mb-3" style="max-width: 100%;">
+<div class="card mb-3" style="max-width: 100%;">
   <div class="row no-gutters">
     <div class="col-md-4">
       <img src= "static/images/hero.jpg" class="card-img" alt="Image Not Available">
     </div>
     <div class="col-md-8">
       <div class="card-body">
-   <h5 class="card-title">{{recipes.name}}</h5>
+        <h5 class="card-title">{{recipes.name}}</h5>
         <p class="card-text">Preparation Time:{{recipes.Prep_time}}</p>
           <p class="card-text">Cooking Time:{{recipes.Cooking_time}}</p>
           <p class="card-text">Serves:{{recipes.Serves}}</p>
@@ -30,7 +29,3 @@
 {% for recipe in recipes %}
 {{recipe.name}}
 {% endfor %}
-
-
-
-{% endblock %}

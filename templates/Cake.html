@@ -1,11 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
-
-<!-- my recipe is the page to preview, edit and submit to db page that follows from the form page-->
-<h1>Your Recipe</h1>
-<p>{% my_recipe %}</p>
+<!-- page to display all results in the category cake-->
 <div class="container-fluid cupcake-image">
+       <div class="container-fluid">
+        <h1 class="recipes-title">
+			Cake Recipes</h1>
+       </div>
 </div>
+<br>
 <div class="card mb-3" style="max-width: 100%;">
   <div class="row no-gutters">
     <div class="col-md-4">
@@ -13,7 +15,7 @@
     </div>
     <div class="col-md-8">
       <div class="card-body">
- <h5 class="card-title">{{recipes.name}}</h5>
+        <h5 class="card-title">{{recipes.name}}</h5>
         <p class="card-text">Preparation Time:{{recipes.Prep_time}}</p>
           <p class="card-text">Cooking Time:{{recipes.Cooking_time}}</p>
           <p class="card-text">Serves:{{recipes.Serves}}</p>
@@ -23,25 +25,11 @@
     </div>
   </div>
 </div>
-<div class="row">
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Ingredients</h5>
-         <p class="card-text">{{recipes.ingredients}}</p>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Method</h5>
-        <p class="card-text">{{recipes.method}}</p>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- CRUD area for uploading, editing, and deleting to the database-->
-<button>Edit</button><button>Submit</button><button>Delete</button>
+<br>
+{% for recipe in recipes %}
+{{recipe.name}}
+{% endfor %}
+
+
 
 {% endblock %}
