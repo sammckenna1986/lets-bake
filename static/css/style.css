@@ -62,7 +62,7 @@ body {
 }
 /* upload your recipe page */
 .upload-image {
-    background: url("../images/upload_image.jpg");
+    background: url("../images/upload.jpg");
     height: 300px;
     width: 100%;
     background-position: center;
@@ -70,8 +70,8 @@ body {
     background-size: cover;
     background-attachment: fixed;
 }
-
-.upload-title {
+/* multi used smaller title */
+.smaller-title {
     color: white;
     text-shadow: 2px 2px #ff0000;
     text-align: left;
