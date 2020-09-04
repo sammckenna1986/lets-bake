@@ -2,40 +2,43 @@
 {% block content %}
 
 <!-- index is the home page with the hero image and displaying a recipe of the week and a most recently added feature-->
-     <div class="container-fluid hero-image">
-       <div class="container-fluid">
-        <h1 class="hero-title">
-			Lets Bake</h1>
-         <h3 class="hero-quote">
-           because then you can eat cake... or cookies...</h3>
-       </div>
-    </div>
-<br>
+<div class="container-fluid hero-image">
     <div class="container-fluid">
-        <!-- Recipe that automatically changes each week -->
-        <h1>Recipe of the week</h1>
-        <br>
-        {% for Recipes in Recipes %}
-        <div class="card mb-3" style="max-width: 100%;">
-  <div class="row no-gutters">
-    <div class="col-md-4">
-      <img src= "static/images/hero.jpg" class="card-img" alt="Image Not Available">
+        <h1 class="hero-title">
+            Lets Bake</h1>
+        <h3 class="hero-quote">
+            because then you can eat cake... or cookies...</h3>
     </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">{{ Recipes.name }}</h5>
-        <p class="card-text">Preparation Time: Prep_time</p>
-          <p class="card-text">Cooking Time: Cooking_time</p>
-          <p class="card-text">Serves: Serves</p>
-          <p class="card-text">Effort: Effort_level</p>
-        <p class="card-text"><small class="text-muted">Added to site:</small></p>
-      </div>
-        {% endfor %}
-    </div>
-  </div>
 </div>
-    </div>
+<br>
+<div class="container-fluid">
+    <!-- Recipe that automatically changes each week -->
+    <h1>Recipe of the week</h1>
+    <br>
+    {% for Recipes in Recipes %}
+    <div class="card mb-3" style="max-width: 100%;">
+        <div class="row gutters">
+            <div class="col-md-4">
+                <img src="static/images/hero.jpg" class="card-img" alt="Image Not Available">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">{{Recipe.name}}</h5>
+                    <p class="card-text">Preparation Time: {{Recipe.prep_time}}</p>
+                    <p class="card-text">Cooking Time: {{Recipe.cooking_time}}</p>
+                    <p class="card-text">Serves: {{Recipe.serves}}</p>
+                    <p class="card-text">Effort Level: {{Recipe.effort_level}}</p>
 
+                </div>
+            </div>
+        </div>
+        <a href="#" class="stretched-link"></a>
+    </div>
+    {% endfor %}
+</div>
+</div>
+</div>
+</div>
 
 
 {% endblock %}

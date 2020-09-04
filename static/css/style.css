@@ -74,7 +74,7 @@ body {
 .smaller-title {
     color: white;
     text-shadow: 2px 2px #ff0000;
-    text-align: left;
+    text-align: centre;
     margin-left: 10%;
     padding-top: 10%;
     font-family: 'Poppins', sans-serif;
@@ -85,22 +85,18 @@ body {
 /* cakes page */
 .cupcake-image {
     background: url("../images/cupcake.jpg");
-    height: 300px;
     width: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed;
 }
 /* biscuits page */
 .biscuits-image {
     background: url("../images/biscuits.jpg");
-    height: 300px;
     width: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed;
 }
 
 /* footer */
