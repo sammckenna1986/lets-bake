@@ -1,4 +1,5 @@
 import os
+import time
 from flask import Flask, render_template, redirect, request, url_for, request
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
@@ -15,12 +16,6 @@ mongo = PyMongo(app)
 @app.route('/')
 def index():
     return render_template("index.html")
-
-
-#recipes page display entire recipe with 3 you may like cards
-@app.route('/recipes_page')
-def recipes_page():
-    return render_template("recipes_page.html", Recipes=mongo.db.Recipes.find())
 
 
 #cake page displaying all recipes with the category name cake
@@ -51,27 +46,51 @@ def page_not_found(error):
     return render_template("page_not_found.html"), 404
 
 
-#add your recipe page form to enter users recipe the C in crud
-@app.route('/Add your recipe', methods=["POST", "GET"])
+#send user to add recipe page form
+@app.route('/Add your recipe')
 def add_recipe():
     return render_template("add_recipe.html")
 
 
 #submit recipe page the RUD in crud, users can preview edit and delete recipes
 @app.route('/submit_recipe', methods=["POST", "GET"])
-def upload_recipe(Recipes=None):
-    collection = mongo.db.Recipes, Recipes.insert_one(request.form.to_dict())
-    return redirect(url_for('my_recipe.html'))
+def upload_recipe():
+    add_recipe = mongo.db.Recipes
+
+    name = request.form['name']
+    category_name = request.form['category_name']
+    prep_time = request.form['prep_time']
+    cooking_time = request.form['cooking_time']
+    effort_level = request.form['effort_level']
+    serves = request.form['serves']
+    ingredients = request.form['ingredients']
+    method = request.form['method']
+
+    add_recipe_form = {
+        "name": name,
+        "category_name": category_name,
+        "prep_time": prep_time,
+        "cooking_time": cooking_time,
+        "effort_level": effort_level,
+        "serves": serves,
+        "ingredients": ingredients,
+        "method": method,
+        "date_added": time.asctime(time.localtime(time.time()))
+    }
+    add_recipe.insert_one(request.form.to_dict())
+    return render_template("index.html")
 
 
-# @app.route('/<my_recipe>')
-# def my_recipe():
-#   return render_template("my_recipe.html")
+@app.route('/My_Recipe/<Recipes_id>')
+def my_recipe(Recipes_id):
+     my_recipe = mongo.db.Recipes.find_one({"_id": ObjectId(Recipes_id)})
+     return render_template("my_recipe.html")
 
-
-# @app.route('/{% category % }')
-# def category():
-#    return render_template("categories.html", category_name=mongo.db.category_name.find())
+#recipes page display entire recipe with 3 you may like cards
+@app.route('/recipes_page/<Recipes_id>')
+def recipes_page(Recipes_id):
+    return render_template("recipes_page.html",
+                           Recipes=mongo.db.Recipes.find({'_id': ObjectId(Recipes_id)}))
 
 
 # search results page to display search results containing keywords
