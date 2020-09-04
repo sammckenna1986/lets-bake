@@ -1,30 +1,30 @@
 {% extends 'base.html' %}
+<!-- page to display all results in the category cake-->
 {% block content %}
 {% for Recipe in Recipes %}
-<!-- page to display all results in the category cake-->
 <div class="container-fluid biscuits-image">
        <div class="container-fluid">
-        <h1 class="Recipes-title">
+        <h1 class="recipes-title">
 			Biscuit Recipes</h1>
        </div>
 </div>
-<br>
 <div class="card mb-3" style="max-width: 100%;">
-  <div class="row no-gutters">
+  <div class="row gutters">
     <div class="col-md-4">
       <img src= "static/images/hero.jpg" class="card-img" alt="Image Not Available">
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <h5 class="card-title">{{Recipes.name}}</h5>
-        <p class="card-text">Preparation Time:{{Recipes.Prep_time}}</p>
-          <p class="card-text">Cooking Time:{{Recipes.Cooking_time}}</p>
-          <p class="card-text">Serves:{{Recipes.Serves}}</p>
-          <p class="card-text">Effort Level:{{Recipes.Effort_level}}</p>
-        <p class="card-text"><small class="text-muted">Added to site:{{Recipes.date_added}}</small></p>
+        <h5 class="card-title">{{Recipe.name}}</h5>
+        <p class="card-text">Preparation Time: {{Recipe.prep_time}}</p>
+          <p class="card-text">Cooking Time: {{Recipe.cooking_time}}</p>
+          <p class="card-text">Serves: {{Recipe.serves}}</p>
+          <p class="card-text">Effort Level: {{Recipe.effort_level}}</p>
+
       </div>
     </div>
   </div>
+  <a href="#" class="stretched-link"></a>
 </div>
 <br>
 {% endfor %}

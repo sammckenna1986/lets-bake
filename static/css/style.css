@@ -4,7 +4,7 @@ body {
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
 }
-
+/* index page hero image and title*/
 .hero-image {
     background: url("../images/hero.jpg");
     height: 500px;
@@ -33,7 +33,7 @@ body {
     font-weight: 400;
     font-size: 2em;
 }
-
+/* page not found page */
 .pageNotFound-title {
     color: black;
     text-align: left;
@@ -60,9 +60,9 @@ body {
     font-weight: 700;
     font-size: 3em;
 }
-
-.recipes-image {
-    background: url("../images/recipes.jpg");
+/* upload your recipe page */
+.upload-image {
+    background: url("../images/upload_image.jpg");
     height: 300px;
     width: 100%;
     background-position: center;
@@ -71,8 +71,9 @@ body {
     background-attachment: fixed;
 }
 
-.recipes-title {
+.upload-title {
     color: white;
+    text-shadow: 2px 2px #ff0000;
     text-align: left;
     margin-left: 10%;
     padding-top: 10%;
@@ -81,7 +82,7 @@ body {
     font-size: 600%;
     font-display: flex;
 }
-
+/* cakes page */
 .cupcake-image {
     background: url("../images/cupcake.jpg");
     height: 300px;
@@ -91,7 +92,7 @@ body {
     background-size: cover;
     background-attachment: fixed;
 }
-
+/* biscuits page */
 .biscuits-image {
     background: url("../images/biscuits.jpg");
     height: 300px;
@@ -102,17 +103,7 @@ body {
     background-attachment: fixed;
 }
 
-.upload-title {
-    color: #269E9C;
-    text-align: left;
-    margin-left: 10%;
-    padding-top: 10%;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    font-size: 400%;
-    font-display: flex;
-}
-
+/* footer */
 footer {
     position: sticky;
 }
