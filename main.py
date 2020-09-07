@@ -8,7 +8,6 @@ app = Flask(__name__)
 app.config["Recipe_Book"] = 'Recipes'
 app.config["MONGO_URI"] = "mongodb+srv://claireroberts1403:M0ng0DB2020@letsbake.mizcn.mongodb.net/Recipe_Book?retryWrites=true&w=majority"
 
-
 mongo = PyMongo(app)
 
 
@@ -96,6 +95,8 @@ def recipes_page(Recipes_id):
 # search results page to display search results containing keywords
 @app.route('/Search_Results')
 def recipe_display():
+    user_search = request.form("user_search")
+    search_results = mongo.db.Recipes.find(user_search)
     return render_template("recipe_search_display.html", Recipes=mongo.db.Recipes.find())
 
 
