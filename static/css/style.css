@@ -65,12 +65,12 @@ body {
 /* upload your recipe page */
 .upload-image {
     background: url("../images/upload.jpg");
+    height: 500px;
     width: 100%;
-    height: 50%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
+    background-attachment: fixed;
 }
 /* multi used smaller title */
 .smaller-title {
@@ -90,22 +90,22 @@ body {
 /* cakes page */
 .cupcake-image {
     background: url("../images/cupcake.jpg");
+    height: 500px;
     width: 100%;
-    height: 50%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
+    background-attachment: fixed;
 }
 /* biscuits page */
 .biscuits-image {
     background: url("../images/biscuits.jpg");
+    height: 500px;
     width: 100%;
-    height: 50%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
+    background-attachment: fixed;
 }
 
 /* footer */
