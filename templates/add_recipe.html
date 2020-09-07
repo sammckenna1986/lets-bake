@@ -10,68 +10,64 @@
 <br>
 <form action="{{url_for('upload_recipe')}}" name="my_recipe" method="POST">
     <div class="form-group">
-        <label for="formGroupExampleInput">Name of Recipe</label>
-        <input name="name" class="form-control" id="formGroupExampleInput" placeholder="Enter the name for the recipe"
-               type="text">
-    </div>
-    <div>
-        <label class="col-form-label">Choose Category</label>
-        <div class="col-md-4">
-            <div class="form-group">
-                <select name="category_name" class="form-control" id="exampleFormControlSelect1">
-                    <option>Cakes</option>
-                    <option>Biscuits</option>
-                    <option>Other</option>
-                </select>
+        <div class="row">
+            <label class="col-form-label">Your Recipe Name</label>
+            <div class="col-md">
+                <input name="name" type="text" class="form-control" placeholder="Enter a name">
+            </div>
+            <label class="col-form-label">Choose Category</label>
+            <div class="col-md">
+                <div class="form-group">
+                    <select name="category_name" class="form-control" id="exampleFormControlSelect1">
+                        <option>Cakes</option>
+                        <option>Biscuits</option>
+                        <option>Other</option>
+                    </select>
+                </div>
             </div>
         </div>
+        <br>
         <div class="row">
             <label class="col-form-label">Preparation Time</label>
-            <div class="col">
+            <div class="col-md">
                 <input name="prep_time" type="text" class="form-control" placeholder="In minutes">
             </div>
             <label class="col-form-label">Cooking Time</label>
-            <div class="col">
+            <div class="col-md">
                 <input name="cooking_time" type="text" class="form-control" placeholder="In minutes">
             </div>
         </div>
         <br>
         <div class="row">
-            <label class="col-sm-2 col-form-label">Serves</label>
-            <div class="col-md-4">
-                <input name="serves" type="text" class="form-control" placeholder="How many does your recipe serve?">
-            </div>
-            <br>
             <label class="col-form-label">Effort Level</label>
-            <div class="col-md-4">
+            <div class="col-md">
                 <div class="form-group">
-                    <select name="effort_level" class="form-control" id="exampleFormControlSelect1">
+                    <select name="effort_level" class="form-control">
                         <option>Easy</option>
                         <option>Moderate</option>
                         <option>Fair bit of effort needed</option>
                     </select>
                 </div>
             </div>
+            <br>
+            <label class="col-form-label">Serves/Makes</label>
+            <div class="col-md">
+                <input name="serves" type="text" class="form-control" placeholder="How many does your recipe serve?">
+            </div>
         </div>
-    </div>
-    <br>
-    <br>
-    <h3>Ingredients</h3>
-    <
-    <div class="form-group">
-        <label for="ingredientsTextarea"></label>
+        <br>
+        <label for="ingredientsTextarea"><h4>Ingredients</h4></label>
         <textarea name="ingredients" class="form-control" id="ingredientsTextarea" rows="3"
                   placeholder="List your ingredients here. Remember to include quantity."></textarea>
-    </div>
-
-    </div>
-    <h4>Method</h4>
-    <div class="form-group">
-        <label for="methodTextarea"></label>
+        <br>
+        <label for="methodTextarea"><h4>Method</h4></label>
         <textarea name="method" class="form-control" id="methodTextarea" rows="3"
                   placeholder="Write your method here, include oven temperatures and all steps needed to bake your amazing recipe"></textarea>
+
+        <!---- preview button submits data to mongodb and links to my_recipe page to allow editing, deletion and a user submit which links back to index-->
+        <button name="uploaded_on" class="btn btn-info" type="datetime-local"> Preview
+        </button>
     </div>
-    <button name="uploaded_on" class="btn btn-info" type="datetime-local" value="">Preview</button>
 </form>
 
 {% endblock %}
