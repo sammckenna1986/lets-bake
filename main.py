@@ -105,7 +105,7 @@ def edit_recipe(Recipes_id):
             "method": request.form.get('method'),
             "image": request.form.get("image"),
         })
-        return redirect(url_for('my_recipe', Recipes_id=recipe_id))
+        return redirect(url_for('my_recipe', Recipes_id=Recipes_id))
     else:
         form = add_recipe_form()
         return render_template('add_recipe.html',
