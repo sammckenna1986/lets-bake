@@ -1,6 +1,4 @@
 import os
-from typing import List
-
 from env import env
 import time
 from flask import Flask, render_template, request
