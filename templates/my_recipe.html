@@ -3,16 +3,14 @@
 {% for Recipe in Recipes %}
 <!-- Page to display single recipe with additional you may like cards at the bottom-->
 <!-- needs to display single recipe from 'onclick from search results or from 'onclick via categories-->
-<div class="container-fluid cupcake-image">
-</div>
 <div class="card mb-3" style="max-width: 100%;">
   <div class="row no-gutters">
     <div class="col-md-4">
-      <img src= "static/images/hero.jpg" class="card-img" alt="Image Not Available">
+      <img src= "#" class="card-img" alt="Image Not Available">
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <h5 class="card-title">{{Recipes.name}}</h5>
+        <h3 class="card-title">{{Recipes.name}}</h3>
         <p class="card-text">Preparation Time:{{Recipes.Prep_time}}</p>
           <p class="card-text">Cooking Time:{{Recipes.Cooking_time}}</p>
           <p class="card-text">Serves:{{Recipes.Serves}}</p>

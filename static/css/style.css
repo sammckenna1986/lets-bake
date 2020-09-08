@@ -43,6 +43,16 @@ body {
 }
 
 
+.message-image {
+    background: url("../images/message.jpg");
+    height: 500px;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
 /* page not found page */
 .pageNotFound-title {
     color: black;
@@ -71,14 +81,9 @@ body {
     font-size: 3em;
 }
 /* upload your recipe page */
-.upload-image {
-    background: url("../images/upload.jpg") no-repeat;
-    height: 500px;
-    width: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+.upload_form {
+    margin: 0px, 20px:
+
 }
 /* multi used smaller title */
 .smaller-title {

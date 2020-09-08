@@ -15,7 +15,7 @@
 <div class="card mb-3 recipe_card" style="max-width: 100%;">
   <div class="row gutters">
     <div class="col-md-4">
-      <img src= "static/images/hero.jpg" class="card-img" alt="Image Not Available">
+      <img src= "{url_for('recipe_image', recipe_image=name['recipe_image'])}" class="card-img" alt="Image Not Available">
     </div>
     <div class="col-md-8">
       <div class="card-body">
