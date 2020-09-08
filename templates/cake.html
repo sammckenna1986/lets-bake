@@ -1,20 +1,18 @@
 {% extends 'base.html' %}
-{% block content %}
-{% for Recipe in Recipes %}
+{% block body %}
 <!-- page to display all results in the category cake-->
-<div class="container-fluid cupcake-image">
-       <div class="container-fluid">
+<div>
+<img class="banner" src="./static/images/cupcake.jpg">
         <h1 class="smaller-title">
-			Cake Recipes</h1>
-       </div>
+          Cake Recipes</h1>
 </div>
-<br>
 {% endblock %}
 
 {% block content %}
-
+{% for Recipe in Recipes %}
 <!-- card for recipe linking to full recipe page -->
-<div class="card mb-3" style="max-width: 100%;">
+
+<div class="card mb-3 recipe_card" style="max-width: 100%;">
   <div class="row gutters">
     <div class="col-md-4">
       <img src= "static/images/hero.jpg" class="card-img" alt="Image Not Available">

@@ -35,6 +35,14 @@ body {
     font-weight: 400;
     font-size: 2em;
 }
+
+/*Recipe card*/
+
+.recipe_card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
 /* page not found page */
 .pageNotFound-title {
     color: black;
@@ -64,7 +72,7 @@ body {
 }
 /* upload your recipe page */
 .upload-image {
-    background: url("../images/upload.jpg");
+    background: url("../images/upload.jpg") no-repeat;
     height: 500px;
     width: 100%;
     background-position: center;
@@ -88,14 +96,12 @@ body {
 }
 
 /* cakes page */
-.cupcake-image {
-    background: url("../images/cupcake.jpg");
-    height: 500px;
-    width: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+.banner {
+    display: block;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width:100%;
+    height:30%;
 }
 /* biscuits page */
 .biscuits-image {
