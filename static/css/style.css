@@ -95,23 +95,17 @@ body {
     transform: translate(-50%, -50%);
 }
 
-/* cakes page */
+/* recipe list pages - cake - biscuits - all */
 .banner {
     display: block;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     width:100%;
-    height:30%;
+    height:300px;
 }
-/* biscuits page */
-.biscuits-image {
-    background: url("../images/biscuits.jpg");
-    height: 500px;
-    width: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+
+.container-banner {
+    margin-bottom: 20px;
 }
 
 /* footer */

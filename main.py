@@ -1,9 +1,12 @@
 import os
+from typing import List
+
 from env import env
 import time
 from flask import Flask, render_template, request
 from flask_pymongo import PyMongo, pymongo
 from bson.objectid import ObjectId
+
 
 env = env
 
@@ -14,18 +17,17 @@ app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
-
 #landing page featuring recipe of the week and recently added
 @app.route('/')
 def index():
-    return render_template("index.html")
+    recipe_of_the_week = mongo.db.Recipes.find({"category_name": 'cake'})
+    return render_template("index.html", Recipes=recipe_of_the_week)
 
 
 #cake page displaying all recipes with the category name cake
 @app.route('/Cake')
 def cake():
     all_cakes = mongo.db.Recipes.find({"category_name": 'cake'})
-    print(all_cakes.count())
     return render_template('cake.html', Recipes=all_cakes)
 
 
