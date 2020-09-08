@@ -58,6 +58,10 @@ After lots of difficulty connecting to mongoDB. One issues was the versions of d
 was a capital R. After getting connected was then able to but the Mongo set up details in a secure env.py file to ensure the password is secure and to stop the database from
 being tampered with.
 
+Some issues with rendering the information back from MongoDB. The initial set up of the recipe card rendered the different recipe cards well. However, I found some difficulty
+adding a link to the card to then display the whole recipe including ingredients and method. After added an upload image function, this too would bring back the image when requested
+by name, yet it wouldn't render in the recipe card. Also the new recipes uploaded by a user are displayed in the all recipe page but do not render when call via the category pages.
+
 
 ## Deployment
 Using Pycharm as a integrated development environment, had both some positive features and some negative. The set up to Heroku was challenging 
