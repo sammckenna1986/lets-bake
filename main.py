@@ -20,7 +20,7 @@ mongo = PyMongo(app)
 #landing page featuring recipe of the week and recently added
 @app.route('/')
 def index():
-    recipe_of_the_week = mongo.db.Recipes.find({"category_name": 'cake'})
+    recipe_of_the_week = mongo.db.Recipes.find({"name": 'Chocolate orange brownies'})
     return render_template("index.html", Recipes=recipe_of_the_week)
 
 
@@ -85,17 +85,11 @@ def upload_recipe():
     add_recipe.insert_one(request.form.to_dict())
     return render_template("index.html")
 
-
+#recipes page display entire recipe with 3 you may like cards
 @app.route('/My_Recipe/<Recipes_id>')
 def my_recipe(Recipes_id):
      my_recipe = mongo.db.Recipes.find_one({"_id": ObjectId(Recipes_id)})
-     return render_template("my_recipe.html")
-
-#recipes page display entire recipe with 3 you may like cards
-@app.route('/recipes_page/<Recipes_id>')
-def recipes_page(Recipes_id):
-    return render_template("recipes_page.html",
-                           Recipes=mongo.db.Recipes.find({'_id': ObjectId(Recipes_id)}))
+     return render_template("my_recipe.html", my_recipe=my_recipe)
 
 
 # search results page to display search results containing keywords

@@ -1,9 +1,8 @@
-{% extends 'base.html' %}
-{% block content %}
+{{% extends 'base.html' %}
+{% block head %}
 {% for Recipe in Recipes %}
-<!-- my recipe is the page to preview, edit and submit to db page that follows from the form page-->
-<h1>Your Recipe</h1>
-<p>{% my_recipe %}</p>
+<!-- Page to display single recipe with additional you may like cards at the bottom-->
+<!-- needs to display single recipe from 'onclick from search results or from 'onclick via categories-->
 <div class="container-fluid cupcake-image">
 </div>
 <div class="card mb-3" style="max-width: 100%;">
@@ -13,7 +12,7 @@
     </div>
     <div class="col-md-8">
       <div class="card-body">
- <h5 class="card-title">{{Recipes.name}}</h5>
+        <h5 class="card-title">{{Recipes.name}}</h5>
         <p class="card-text">Preparation Time:{{Recipes.Prep_time}}</p>
           <p class="card-text">Cooking Time:{{Recipes.Cooking_time}}</p>
           <p class="card-text">Serves:{{Recipes.Serves}}</p>
@@ -28,7 +27,7 @@
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Ingredients</h5>
-         <p class="card-text">{{Recipes.ingredients}}</p>
+        <p class="card-text">{{Recipes.ingredients}}</p>
       </div>
     </div>
   </div>
@@ -41,9 +40,42 @@
     </div>
   </div>
 </div>
+
 <!-- CRUD area for uploading, editing, and deleting to the database-->
 <button class="btn btn-info" type="submit" value="submit">Edit</button>
 <button class="btn btn-info" type="submit" value="submit">Submit</button>
 <button class="btn btn-info" type="submit" value="submit">Delete</button>
+<br>
+<br>
+{% endblock %}
+
+{% block content %}
+{% for Recipe in Recipes %}
+<!-- Found with same keywords -->
+<h2>Other recipes you may like ...</h2>
+<br>
+<div class="card-deck">
+  <div class="card">
+    <img src="static/images/hero.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{Recipes.name}}</h5>
+    </div>
+  </div>
+  <div class="card">
+    <img src="static/images/hero.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{Recipes.name}}</h5>
+    </div>
+  </div>
+  <div class="card">
+    <img src="static/images/hero.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{Recipes.name}}</h5>
+    </div>
+  </div>
+</div>
+
 
 {% endblock %}
+
+
