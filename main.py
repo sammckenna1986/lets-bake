@@ -90,12 +90,12 @@ def upload_recipe():
 
 
 # Edit Recipe
-@app.route("/recipe/<recipe_id>/edit", methods=["GET", "POST"])
-def edit_recipe(recipe_id):
+@app.route("/recipe/<Recipes_id>/edit", methods=["GET", "POST"])
+def edit_recipe(Recipes_id):
     Recipes = mongo.db.Recipes
-    my_Recipe = mongo.db.Recipes.find_one({"_id": ObjectId(recipe_id)})
+    my_Recipe = mongo.db.Recipes.find_one({"_id": ObjectId(Recipes_id)})
     if request.method == "POST":
-        Recipes.update({"_id": ObjectId(recipe_id)}, {
+        Recipes.update({"_id": ObjectId(Recipes_id)}, {
             "name": request.form.get("name"),
             "category_name": request.form.get("category_name"),
             "prep_time": request.form.get("prep_time"),
@@ -105,7 +105,7 @@ def edit_recipe(recipe_id):
             "method": request.form.get('method'),
             "image": request.form.get("image"),
         })
-        return redirect(url_for('my_recipe', recipe_id=recipe_id))
+        return redirect(url_for('my_recipe', Recipes_id=recipe_id))
     else:
         form = add_recipe_form()
         return render_template('add_recipe.html',
@@ -113,9 +113,9 @@ def edit_recipe(recipe_id):
 
 
 # delete function
-@app.route('/recipe/<recipe_id>/delete')
-def deleteRecipe(recipe_id):
-    mongo.db.Recipes.remove({'_id': ObjectId(recipe_id)})
+@app.route('/recipe/<Recipes_id>/delete')
+def deleteRecipe(Recipes_id):
+    mongo.db.Recipes.remove({'_id': ObjectId(Recipes_id)})
     return render_template("index.html")
 
 #test to see recipe image returning from mongodb
@@ -142,13 +142,8 @@ if __name__ == '__main__':
     app.run(debug=True)
 
 
-# def add_recipe(name, prep_time, cooking_time, effort_level, serves, ingredients, method):
-#
-#    recipe = Recipe(name=name, prep_time=prep_time, cooking_time=cooking_time, effort_level=effort_level, serves=serves, ingredients=ingredients, method=method)
-#   recipe.save()
-
 # page to complete mongo tests
 @app.route('/test')
 def test():
-    all_recipes = mongo.db.Recipes.find({"__id"})
+    all_recipes = mongo.db.Recipes.find({"_id"})
     return render_template('test.html', Recipes=all_recipes)
