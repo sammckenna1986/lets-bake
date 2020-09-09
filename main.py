@@ -122,18 +122,20 @@ def image(recipe_image):
     return mongo.send_file(recipe_image)
 
 # recipes page display entire recipe with 3 you may like cards
-@app.route('/my_recipe/<name>')
-def my_recipe(name):
-    my_recipe = mongo.db.Recipes.find_one_or_404({"name": name})
-    return render_template("my_recipe.html", my_recipe=my_recipe)
+@app.route('/my_recipe/<recipe_id>')
+def my_recipe(recipe_id):
+    recipe_id = mongo.db.Recipes.get("_id")
+    my_recipe = mongo.db.Recipes.find({'_id': ObjectId(recipe_id)})
+    mongo.db.recipes.update({'_id': ObjectId(recipe_id)}, { '$inc': { 'views': 1 } })
+    return render_template("my_recipe.html", Recipes=my_recipe)
 
 
 # search results page to display search results containing keywords
-@app.route('/search_results')
+@app.route('/search_results', methods=["GET"])
 def recipe_display():
-    user_search = request.form("user_search")
-    search_results = mongo.db.Recipes.find(user_search)
-    return render_template("recipe_search_display.html", Recipes=mongo.db.Recipes.find(search_results))
+    user_search_input = request.form.get("user_search")
+    search_results = list(mongo.db.Recipes.find('keywords:{"$regex":user_search_input}}'))
+    return render_template("recipe_search_display.html", search_results=search_results)
 
 
 if __name__ == '__main__':
